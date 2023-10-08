@@ -1,6 +1,5 @@
 package com.ms.review.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,20 +10,22 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Builder
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "menu")
-@Entity
-public class MenuEntity {
+@Table(name = "review")
+public class ReviewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long restaurantId;
-    private String name;
-    private Integer price;
+
+    private String content;
+
+    private Double score;
 
     private ZonedDateTime createAt;
-    private ZonedDateTime updateAt;
+
 }
